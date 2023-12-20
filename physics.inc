@@ -383,7 +383,7 @@ public PHY_CoreTimer()
 									PHY_Object[b][PHY_VY] = newvy2;
 									PHY_Object[b][PHY_VZ] = newvz2;
 
-									CallLocalFunction("PHY_OnObjectCOLWithObj", "dd", obj_b, b);
+									CallLocalFunction("PHY_OnObjectCOLWithObj", "dd", obj_a, obj_b);
 								}
 								
 								/*
