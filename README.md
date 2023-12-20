@@ -1,5 +1,5 @@
 # 🎢 Physics-Samp
-Include updated physics for SAMP with support for [Streamer plugin]([https://di](https://github.com/samp-incognito/samp-streamer-plugin)https://github.com/samp-incognito/samp-streamer-plugin)
+Include updated physics for SAMP with support for [Streamer plugin](https://github.com/samp-incognito/samp-streamer-plugin)
 This include supports up to 1024 objects from the Streamer plugin. If you need more than that, you have to configure the 'PHY_MAX_OBJECTS' define and adjust it according to your needs.
 
 # Description:
