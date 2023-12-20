@@ -277,7 +277,7 @@ public PHY_CoreTimer()
 					if(PHY_Object[a][PHY_VZ] > 0)
 					{
 						PHY_Object[a][PHY_VZ] = -PHY_Object[a][PHY_VZ] * PHY_Object[a][PHY_BoundConst];
-						CallLocalFunction("PHY_OnObjectCollideWithZBound", "dd", a, 1);
+						CallLocalFunction("PHY_OnObjectCollideWithZBound", "dd", obj_a, 1);
 					}
 					z1 = PHY_Object[a][PHY_HighZBound];
 				}
@@ -286,7 +286,7 @@ public PHY_CoreTimer()
 					if(PHY_Object[a][PHY_VZ] < 0)
 					{
 						PHY_Object[a][PHY_VZ] = -PHY_Object[a][PHY_VZ] * PHY_Object[a][PHY_BoundConst];
-						CallLocalFunction("PHY_OnObjectCollideWithZBound", "dd", a, 0);
+						CallLocalFunction("PHY_OnObjectCollideWithZBound", "dd", obj_a, 0);
 					}
 					z1 = PHY_Object[a][PHY_LowZBound];
 				}
@@ -383,7 +383,7 @@ public PHY_CoreTimer()
 									PHY_Object[b][PHY_VY] = newvy2;
 									PHY_Object[b][PHY_VZ] = newvz2;
 
-									CallLocalFunction("PHY_OnObjectCOLWithObj", "dd", a, b);
+									CallLocalFunction("PHY_OnObjectCOLWithObj", "dd", obj_b, b);
 								}
 								
 								/*
@@ -454,7 +454,7 @@ public PHY_CoreTimer()
 						x1 = cx + (PHY_Object[a][PHY_Size] + 0.001) * floatcos(angle, degrees);
 						y1 = cy + (PHY_Object[a][PHY_Size] + 0.001) * floatsin(angle, degrees);
 						
-						CallLocalFunction("PHY_OnObjectCollideWithSAWorld", "dfff", a, cx, cy, cz);
+						CallLocalFunction("PHY_OnObjectCollideWithSAWorld", "dfff", obj_a, cx, cy, cz);
 					}
 				}
 				#endif
@@ -487,7 +487,7 @@ public PHY_CoreTimer()
 									x1 = xclosest + (PHY_Object[a][PHY_Size] + 0.001) * floatcos(angle, degrees);
 									y1 = yclosest + (PHY_Object[a][PHY_Size] + 0.001) * floatsin(angle, degrees);
 
-									CallLocalFunction("PHY_OnObjectCollideWithWall", "dd", a, w);
+									CallLocalFunction("PHY_OnObjectCollideWithWall", "dd", obj_a, w);
 								}
 							}
 						}
@@ -525,7 +525,7 @@ public PHY_CoreTimer()
 											PHY_Object[a][PHY_VX] = newvx1 * floatcos(angle, degrees) - newvy1 * floatsin(angle, degrees);
 											PHY_Object[a][PHY_VY] = newvx1 * floatsin(angle, degrees) + newvy1 * floatcos(angle, degrees);
 
-											CallLocalFunction("PHY_OnObjectCollideWithCylinder", "dd", a, c);
+											CallLocalFunction("PHY_OnObjectCollideWithCylinder", "dd", obj_a, c);
 										}
 									}
 								}
@@ -563,7 +563,7 @@ public PHY_CoreTimer()
 										PHY_Object[a][PHY_VX] = newvx1 * floatcos(angle, degrees) - newvy1 * floatsin(angle, degrees);
 										PHY_Object[a][PHY_VY] = newvx1 * floatsin(angle, degrees) + newvy1 * floatcos(angle, degrees);
 
-										CallLocalFunction("PHY_OnObjectCollideWithPlayer", "dd", a, i);
+										CallLocalFunction("PHY_OnObjectCollideWithPlayer", "dd", obj_a, i);
 									}
 								}
 							}
@@ -598,7 +598,7 @@ public PHY_CoreTimer()
 			PHY_Object[a][PHY_VZ] += PHY_Object[a][PHY_AZ];
 			
 			SetDynamicObjectPos(obj_a, x1, y1, z1);
-			CallLocalFunction("PHY_OnObjectUpdate", "d", a);
+			CallLocalFunction("PHY_OnObjectUpdate", "d", obj_a);
 		}
 		else
 			Iter_SafeRemove(ITER_Object, a, a);
